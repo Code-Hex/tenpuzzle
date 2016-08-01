@@ -13,8 +13,6 @@ func Run(num int) {
 	// 個体を作る (num > 100 以上 && 偶数)
 	trees := GAInit(num)
 	for {
-		// 優秀な順でソート(降順)
-		sort.Sort(trees)
 		Enumerate(trees)
 		trees = Kill(trees)
 		trees = Crossing(trees)
@@ -43,6 +41,8 @@ func Enumerate(trees Trees) {
 
 // 個体の半分を死滅させる
 func Kill(trees Trees) Trees {
+	// 優秀な順でソート(降順)
+	sort.Sort(trees)
 	return trees[len(trees)/2:]
 }
 
