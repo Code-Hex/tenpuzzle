@@ -23,8 +23,16 @@ func Run(num int) {
 
 // 適当に生成
 func GAInit(init_num int) (trees Trees) {
+	btrees := []*Tree{
+		buildTreeA(),
+		buildTreeB(),
+		buildTreeC(),
+		buildTreeD(),
+		buildTreeE(),
+	}
+
 	for i := 0; i < init_num; i++ {
-		trees = append(trees, choiseTree(i%5))
+		trees = append(trees, btrees[i%5])
 	}
 	return
 }

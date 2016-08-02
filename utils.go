@@ -25,23 +25,6 @@ func isOp(c rune) bool {
 	return !unicode.IsDigit(c)
 }
 
-func choiseTree(i int) (t *Tree) {
-	switch i {
-	case 0:
-		t = buildTreeA()
-	case 1:
-		t = buildTreeB()
-	case 2:
-		t = buildTreeC()
-	case 3:
-		t = buildTreeD()
-	case 4:
-		t = buildTreeE()
-	}
-
-	return
-}
-
 func random(max int) int {
 	n, err := rand.Int(rand.Reader, big.NewInt(int64(max)))
 	if err != nil {
